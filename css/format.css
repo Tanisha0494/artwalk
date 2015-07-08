@@ -1,0 +1,637 @@
+
+
+/* @FONT-FACE FONTS */
+
+
+@font-face {
+    font-family: 'texgyreadventorregular';
+    src: url('texgyreadventor-regular-webfont.eot');
+    src: url('texgyreadventor-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('texgyreadventor-regular-webfont.woff') format('woff'),
+         url('texgyreadventor-regular-webfont.ttf') format('truetype'),
+         url('texgyreadventor-regular-webfont.svg#texgyreadventorregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'texgyreadventorbold';
+    src: url('texgyreadventor-bold-webfont.eot');
+    src: url('texgyreadventor-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('texgyreadventor-bold-webfont.woff') format('woff'),
+         url('texgyreadventor-bold-webfont.ttf') format('truetype'),
+         url('texgyreadventor-bold-webfont.svg#texgyreadventorbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* CLEAR-FIX TECHNIQUE */
+
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+/* FLEX-BOX */
+
+
+/* apply a natural box layout model to all elements */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+ }
+
+
+/* GLOBAL STYLES */
+
+
+html{
+	background-color:#FFF;
+}
+
+body{
+	font-size:120%;
+	font-family: 'texgyreadventorregular';
+  font-weight: normal;
+  font-style: normal;
+  line-height:32px;
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.hide{
+  display:none;
+}
+
+main a, nav a{
+  display:block;
+}
+
+
+/* HEADER STYLES */
+
+
+header.media section.social{
+	float:right;
+	padding-top:.5rem;
+	margin-right:.5rem;
+}
+
+header{
+  position:relative;
+  width:100%;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+header.slideshow{
+  position: relative;
+}
+
+header.slideshow h1{
+  margin:0;
+  padding:0;
+}
+
+header.slideshow h1 img{
+  position:absolute;
+  top:.5rem;
+  left:.5rem;
+  z-index:10;
+  width:35%;
+  max-width:250px;
+  }
+
+header.slideshow h1 a{
+  width:50%;
+  max-width:250px;
+  max-height:150px;
+}
+
+
+/* SLIDESHOW STYLES */
+
+
+.rslides {
+  position:relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  clear:right;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides li img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
+
+img[src="images/kidswalk.jpg"],
+img[src="images/contact.jpg"],
+img[src="images/TorreyWinds_Chuck-McPherson-1000x426.jpg"]{
+    display:none;
+  }
+
+
+/* NAV STYLES */
+
+
+nav{
+  width:100%;
+  background-color:#0B4560;
+  margin:0 auto;
+  padding:.025rem 0 ;
+}
+
+label {
+  cursor: pointer;
+  display:block;
+  padding:0.5rem;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px; 
+}
+
+#nav-toggle{
+  padding:1em;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+#menu-toggle {
+  display: none; 
+  
+  /* hide the checkbox*/ 
+}
+
+#gnav {
+  display: none;
+}
+
+#menu-toggle:checked + #gnav {
+  display: block;
+}
+
+nav.global ul#gnav li a{
+  font-size:1.65rem;
+  color:#FFF;
+  text-align:center;
+  text-decoration:none;
+  padding:0.55rem;
+  margin-bottom:0.25rem;
+}
+
+nav.global ul#gnav  li a:hover{
+  background-color:rgba(255,255,255,0.5);
+  color:#0B4560;
+}
+
+#Kidswalk nav.global li.gkids a,
+#Contact nav.global li.gcontact a,
+#Artists nav.global li.gartist a{
+  background-color:#FFF;
+  color:#0B4560;
+}
+
+
+/* MAIN STYLES */
+
+
+main , section#directions{
+  width:100%;
+  padding:0 0.35rem;
+}
+
+h1,h2,h3,h4,h5,h6, main a{
+    
+    font-family: 'texgyreadventorbold';
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1{
+	font-size:1.85rem;
+  color:#0B4560;
+  margin-top:.5rem;  
+  margin-bottom:.25rem;
+}
+
+h2{
+	font-size:1.55rem;
+  color:#797730;
+  margin-bottom:.25rem;
+}
+
+h3{
+	font-size:1.45rem;
+  color:#0076AD;
+  margin-bottom:.25rem;
+}
+
+h4{
+  font-size:1.25rem;
+  color:#C9C21E;
+}
+
+main a{
+  color:#B91F29;
+  text-decoration:none;
+}
+
+main a:hover{
+  text-decoration:underline;
+}
+
+main p{
+	padding:.25rem 0;
+  font-size:1.25rem;
+}
+
+
+/* ASIDE STYLES */
+
+
+aside{
+  width:100%;
+  padding:.5rem;
+}
+
+aside h2{
+  padding-bottom:.5rem;
+}
+
+.video{
+  max-width:560px;
+  max-height:315px;
+  width:100%;
+  height:100%;
+  margin:0 auto;
+
+}
+
+.video iframe{
+  width:100%;
+
+}
+
+
+/* INTERIOR PAGE STYLES */
+
+
+#Contact form{
+  margin: 0 auto;
+  margin-bottom:1rem;
+}
+
+#Contact input, #Contact textarea{
+  width:100%;
+  height:3rem;
+}
+
+#Contact main input[type="checkbox"]{
+  display:inline;
+  width:50px;
+  -moz-appearance: none; /*firefox-fix for checkboxes*/
+}
+
+#Contact input, #Contact textarea{
+  font-size: 1rem;
+  font-family: 'texgyreadventorregular';
+  font-weight: normal;
+  font-style: normal;
+}
+
+#Contact main button[type="submit"]{
+  -webkit-border-radius:0px;
+  border:none;
+  border-radius:0;
+  font-family: 'texgyreadventorregular';
+  font-weight: normal;
+  font-style: normal;
+  font-size:1.35rem;
+  background:none repeat scroll 0 0 #0b4560;
+  color:#FFF;
+  width:100%;
+  height:4rem;
+}
+
+#Contact main button[type="submit"]:hover{
+  background-color:#797730;
+}
+
+#Contact label a{
+  display:inline;
+}
+
+#Contact .success{
+  background-color:#797730;
+  color:#FFF;
+  padding:.5rem;
+}
+
+#Contact .error{
+  background-color:#B91F29;
+  color:#FFF;
+  padding:.5rem;
+}
+
+#Contact img[src="images/contact.jpg"],
+#Kidswalk img[src="images/kidswalk.jpg"],
+#Terms img[src="images/TorreyWinds_Chuck-McPherson-1000x426.jpg"]{
+  display:block;
+  width:100%;
+}
+
+#Kidswalk ul.rslides,
+#Contact ul.rslides,
+#Terms ul.rslides{
+  display:none;
+}
+
+#Terms main h1{
+  margin-bottom:.5rem;
+}
+
+#Terms ol[type="a"] {
+list-style-type: lower-alpha;
+padding-left:2rem;
+}
+
+#Terms ol[type="i"] {
+list-style-type: lower-roman;
+padding-left:4rem;
+}
+
+#Terms main ul{
+  list-style-type:disc;
+  padding-left:2rem;
+}
+
+#Artists figure{
+  margin:1.5rem;
+}
+
+#Artists figure img{
+  width:100%;
+  max-width:600px;
+}
+
+
+/* FOOTER STYLES */
+
+
+footer{
+  background-color:#0B4560;
+}
+
+footer ul{
+  margin:1rem;
+}
+
+footer nav ul li a {
+  font-size:1.25rem;
+  color:#FFF;
+  text-decoration:none;
+  padding:0.75rem;
+}
+
+footer nav ul li a:hover {
+  text-decoration:underline;
+}
+
+#Home li.fhome a,
+#Kidswalk li.fkids a,
+#Contact li.fcontact a,
+#Terms li.fterms a,
+#Artists li.fartist a {
+  text-decoration:underline;
+}
+
+footer section.social{
+  margin:0 auto;
+  width:60%;
+  padding-left:2.5rem;
+  margin-bottom:.5rem;
+}
+
+
+/* MEDIA QUERIES */
+
+
+@media only screen  and (min-width:500px){
+
+  a#nav-toggle{
+    display:none;
+  }
+
+  label[for="menu-toggle"] {
+      display: none; 
+  }
+
+  nav.global ul#gnav li a{
+      margin-bottom:0;
+  }
+
+  .global{
+      clear:both;
+  }
+
+  ul#gnav {
+      display: block;
+  }
+
+  ul#gnav li a {
+        width:30%;
+        float: left;
+        margin-right:.5rem;
+  }
+
+  #Kidswalk figure{
+    margin: .5rem 0;
+  }
+
+    footer nav ul li{
+    float:left;
+  }
+
+  footer section.social{
+    width:60%;
+    margin-bottom:1rem;
+   }
+
+  footer section.social article{
+    width:60%;
+    margin:0 auto;
+   }
+
+
+}/* end of media query min-width:500px */
+
+
+@media only screen  and (min-width:950px){
+
+  nav.global ul#gnav{
+    max-width:1000px;
+    margin:0 auto;
+  }
+
+  nav.global ul#gnav li a{
+    width:30%;
+    margin-right:.5rem;
+    font-size:1.5rem;
+  }
+
+  .gnav{
+      clear:both;
+  }
+
+  #Kidswalk figure{
+    width:50%;
+    margin-top:.5rem;
+    float:left;
+    padding:.5%;
+  }
+
+  footer nav{
+    width:65%;
+    float:left;
+    }
+
+  footer ul{
+  margin:0;
+  padding:.5rem;
+  
+  }
+
+  footer nav ul li a{
+    font-size:1.25rem;
+  }
+
+    footer section.social{
+    width:35%;
+    float:right;
+    padding:0;
+    margin-top:1rem;
+  }
+
+}/* end of media query min-width:950px */
+
+
+@media only screen  and (min-width:1200px){
+
+  nav.global ul#gnav li a{
+    width:32.5%;
+    margin-right:.5rem;
+  }
+
+  #Home main, #Home section#directions{
+    width:50%;
+    float:left;
+    margin:1rem;
+  }
+
+  #Contact main,
+  #Kidswalk main,
+  #Terms main,
+  #Artists main{
+    width:90%;
+    margin:0 auto;
+    margin-top:1rem;
+  }
+
+  aside{
+    width:40%;
+    float:left;
+    margin-top:1rem;
+    margin-left:3.5rem;
+  }
+
+
+
+  #Artists figure figcaption{
+    width:40%;
+    float:right;
+  }
+
+ footer{
+    clear:both;
+  }
+
+
+
+} /* end of media query min-width:1200px */
